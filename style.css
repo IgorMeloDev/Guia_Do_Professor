@@ -1,0 +1,174 @@
+/* RESET BÁSICO */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif; /* Fonte mais moderna */
+    background-color: #e0e5ec;
+    display: flex;
+    justify-content: center;
+    color: #333;
+}
+
+/* SIMULAÇÃO CELULAR */
+.app-container {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 420px;
+    min-height: 100vh;
+    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    position: relative;
+    padding-bottom: 80px;
+}
+
+/* CABEÇALHO */
+header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    padding: 20px;
+    background: linear-gradient(135deg, #2b7de9, #6da6f7);
+    color: white;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+h1 {
+    font-size: 1.1rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* NAVEGAÇÃO (TABS) */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #888;
+    font-weight: 600;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.tab:hover { color: #2b7de9; }
+/* Efeito simples de aba ativa */
+.tab:focus { 
+    color: #2b7de9; 
+    border-bottom: 2px solid #2b7de9;
+}
+
+/* LISTA DE JOGOS */
+.games-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f0f0f0;
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Placeholder colorido para ícone */
+.game-icon-placeholder {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgba(0,0,0,0.5);
+    font-size: 0.8rem;
+    flex-shrink: 0; /* Não deixa o ícone esmagar */
+}
+
+.game-info {
+    flex-grow: 1;
+}
+
+.game-info h3 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.game-info p {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 8px;
+}
+
+/* Botão estilo Play Store */
+.btn-download {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #01875f; /* Verde Play Store */
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background 0.2s;
+}
+
+.btn-download:hover {
+    background-color: #016e4d;
+}
+
+/* METODOLOGIA */
+.methodology-section {
+    padding: 20px;
+    background-color: white;
+    margin-top: 20px;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
+}
+
+.text-box p {
+    margin-bottom: 15px;
+    line-height: 1.6;
+    color: #555;
+    text-align: justify;
+    font-size: 0.9rem;
+}
+
+/* BOTÃO FLUTU
