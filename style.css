@@ -185,3 +185,27 @@ h1 {
     .methodology-section { padding: 20px; }
     .fab { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 22px; }
 }
+.game-icon-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover; /* Garante que a imagem não estique */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* --- TAG DE IDADE (ESTILO PÍLULA) --- */
+.age-tag {
+    display: inline-block; /* Faz a tag ocupar só o espaço necessário */
+    background-color: #e9ecef; /* Cor de fundo cinza claro */
+    color: #495057; /* Cor do texto cinza escuro */
+    font-size: 0.75rem; /* Texto pequenininho */
+    font-weight: 600; /* Texto em negrito */
+    padding: 4px 10px; /* Espapçamento interno */
+    border-radius: 20px; /* Bordas bem redondas (formato pílula) */
+    margin-bottom: 12px; /* Espaço entre a tag e o botão verde */
+}
+
+/* Opcional: Adiciona um pequeno ícone de relógio/idade antes do texto */
+.age-tag::before {
+    content: '📅 '; /* Você pode trocar por outro emoji se quiser */
+    font-size: 0.8rem;
+}
