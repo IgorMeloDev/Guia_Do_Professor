@@ -5,17 +5,15 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #f0f2f5;
     color: #333;
-    /* Removemos o flex centralizado do body para o layout fluir melhor no PC */
 }
 
-/* --- O CONTÊINER PRINCIPAL --- */
+/* --- CONTÊINER PRINCIPAL --- */
 .app-container {
     background-color: #fff;
     width: 100%;
-    /* MÁGICA 1: No PC, vai até 1000px. No celular, ocupa 100% */
-    max-width: 1000px; 
+    max-width: 1000px; /* Limite para PC */
     min-height: 100vh;
-    margin: 0 auto; /* Centraliza a caixa na tela do PC */
+    margin: 0 auto;
     box-shadow: 0 0 20px rgba(0,0,0,0.05);
     position: relative;
 }
@@ -33,14 +31,13 @@ header {
     padding: 20px;
     background: linear-gradient(135deg, #2b7de9, #6da6f7);
     color: white;
-    /* Arredondado apenas embaixo */
     border-radius: 0 0 20px 20px;
 }
 
 .logo-area {
     display: flex;
     align-items: center;
-    justify-content: center; /* Centraliza logo no PC */
+    justify-content: center;
     gap: 15px;
 }
 
@@ -58,7 +55,7 @@ h1 {
     font-weight: 600;
 }
 
-/* --- NAVEGAÇÃO --- */
+/* --- MENU DE NAVEGAÇÃO (LINKS) --- */
 .nav-tabs {
     display: flex;
     justify-content: center;
@@ -72,24 +69,30 @@ h1 {
     font-size: 1.1rem;
     color: #888;
     font-weight: 600;
-    cursor: pointer;
     padding: 10px;
+    
+    /* Importante para links: remove sublinhado e permite padding */
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
 }
 
-.tab:hover, .tab:focus { 
+.tab:hover { 
+    color: #2b7de9; 
+}
+
+/* Classe para mostrar qual aba está selecionada */
+.tab.active { 
     color: #2b7de9; 
     border-bottom: 3px solid #2b7de9;
 }
 
-/* --- LISTA DE JOGOS (A Mágica da Responsividade) --- */
+/* --- JOGOS (GRID) --- */
 .games-grid {
     display: grid;
     padding: 20px;
     gap: 20px;
-    
-    /* MÁGICA 2: Crie colunas automaticamente! 
-       Se a tela for pequena, 1 coluna. Se for grande, várias. 
-       Mínimo de 300px por card. */
+    /* Cria colunas automáticas: PC várias colunas, Celular 1 coluna */
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
@@ -106,7 +109,7 @@ h1 {
 }
 
 .game-card:hover {
-    transform: translateY(-5px); /* Efeito de subir ao passar o mouse */
+    transform: translateY(-5px);
     border-color: #2b7de9;
 }
 
@@ -139,8 +142,8 @@ h1 {
 
 /* --- METODOLOGIA --- */
 .methodology-section {
-    padding: 40px; /* Mais espaço nas laterais no PC */
-    max-width: 800px; /* Não deixa o texto ficar muito largo difícil de ler */
+    padding: 40px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
@@ -156,7 +159,7 @@ h1 {
 .fab {
     position: fixed;
     bottom: 30px;
-    right: 30px; /* Canto direito da tela */
+    right: 30px;
     width: 60px;
     height: 60px;
     background-color: #2b7de9;
@@ -172,34 +175,13 @@ h1 {
     justify-content: center;
     transition: transform 0.2s;
 }
-
 .fab:hover { transform: scale(1.1); }
 
-/* --- MEDIA QUERIES (Ajustes finos para Celular) --- */
+/* --- RESPONSIVIDADE (CELULAR) --- */
 @media (max-width: 768px) {
-    /* Tudo aqui dentro só funciona se a tela for menor que 768px (Tablet/Celular) */
-    
-    .app-container {
-        max-width: 100%; /* Ocupa tudo */
-    }
-
-    .header-content {
-        border-radius: 0 0 15px 15px; /* Curva menor */
-    }
-
-    .games-grid {
-        grid-template-columns: 1fr; /* Força 1 coluna no celular */
-    }
-
-    .methodology-section {
-        padding: 20px;
-    }
-
-    .fab {
-        width: 50px;
-        height: 50px;
-        bottom: 20px;
-        right: 20px;
-        font-size: 22px;
-    }
+    .app-container { max-width: 100%; }
+    .header-content { border-radius: 0 0 15px 15px; }
+    .games-grid { grid-template-columns: 1fr; } /* 1 Coluna no celular */
+    .methodology-section { padding: 20px; }
+    .fab { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 22px; }
 }
